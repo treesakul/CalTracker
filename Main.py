@@ -11,12 +11,12 @@ class Main:
         self.a = LoginSystem()
 
     def setAcc(self,x,y):
-        self.a.check(x,y)       # become the account that logged in
+        self.a.check(x,y)       # self.a become the account that logged in
         theAcc = self.a.account.id
         with db_session:
             find = Profile.select_by_sql(
                 "SELECT * FROM Profile WHERE id = $theAcc")
-        print(find)
+        self.current = find[0]
 
     def getAcc(self):
         print(self.current)
@@ -25,7 +25,7 @@ class Main:
 ##    n = Profile.select_by_sql("SELECT * FROM Profile")
 ##print(n[0])
 
-with db_session:
-    find = Profile.select_by_sql("SELECT * FROM Profile WHERE id = 12")
-
-print(find)
+##x = 14
+##with db_session:
+##    find = Profile.select_by_sql("SELECT * FROM Profile WHERE id = $x")
+##print(find)

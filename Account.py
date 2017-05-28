@@ -1,5 +1,6 @@
 from pony.orm import *
-from User import *
+from Profile import *
+from pony.orm import *
 db = Database()
 db.bind('oracle', 'TANAKORN/password@127.0.01')
 

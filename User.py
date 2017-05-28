@@ -1,20 +1,19 @@
 from pony.orm import *
-from Date import * 
+from datetime import *
+from Account import *
 db = Database()
-db.bind('oracle', 'TREESAKUL/123159@127.0.01')
+db.bind('oracle', 'TANAKORN/password@127.0.01')
 
 class User(db.Entity):
-    id = PrimaryKey(int, auto=True)
+    id = PrimaryKey(int)
     fname = Required(str)
     lname = Required(str)
-    birthday = Required(date)
+##    birthday = Required(date)
     pic = Optional(str)
     
-    def generate_mapping():
-        db.generate_mapping(create_tables= True)
+db.generate_mapping(create_tables= True)
 
 @db_session
-def add_user(u,p):
-    Account(username= u, password = p)
-    
-Account.generate_mapping()
+def add_user(iden, fname, lname):
+    User(id = iden, fname = fname, lname = lname)
+

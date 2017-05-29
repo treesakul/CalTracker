@@ -13,8 +13,8 @@ class Exercise(db.Entity):
 db.generate_mapping(create_tables= True)
 
 @db_session
-def add_exercise(n,a, des= "", p = ""):
-    Exercise(name = n, calorie= a, description=des, pic= p )
+def add_exercise(n,a):
+    Exercise(name = n, calorie= a)
 
 @db_session
 def remove_exercise(e_id):

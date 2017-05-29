@@ -986,7 +986,7 @@
     <string>Kg  per  Week</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="Register_duration_cb">
+  <widget class="QComboBox" name="Register_amount_cb">
    <property name="geometry">
     <rect>
      <x>820</x>

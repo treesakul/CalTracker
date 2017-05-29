@@ -1,8 +1,10 @@
 import sys
-
 from PySide.QtCore import *
 from PySide.QtGui import *
 from PySide.QtUiTools import *
+from pony.orm import *
+db = Database()
+db.bind('oracle', 'TANAKORN/password@127.0.01')
 
 class Edit_Profile_Page_UI(QMainWindow):
     def __init__(self, parent = None):
@@ -36,8 +38,6 @@ class Edit_Profile_Page_UI(QMainWindow):
         self.GenderGroup = QButtonGroup()
         self.GenderGroup.addButton(self.EditPro_Gender_Female_radioBT)
         self.GenderGroup.addButton(self.EditPro_Gender_Male_radioBT)
-
-
 
         #set QDateEdit
         self.EditPro_Bday_dateEdit = form.findChild(QDateEdit, "EditPro_Bday_dateEdit")
@@ -100,34 +100,40 @@ class Edit_Profile_Page_UI(QMainWindow):
 
     def save(self):
         ###### .text() use with lineedit  ###### .toPlainText() use with textedit
-        self.user_list = []
+        lis = []
         self.show_textEdit.setText("")
+        self.pic = self.parent.current_user.pic
 
         self.Fname = self.EditPro_Fname_textEdit.text()
         self.Lname = self.EditPro_Lname_textEdit.text()
         self.Username = self.EditPro_userName_textEdit.text()
         self.password = self.EditPro_passWord_textEdit.text()
-        self.weigth = self.EditPro_weight_textEdit.text()
-        self.heigth = self.EditPro_height_textEdit.text()
+        self.weight = self.EditPro_weight_textEdit.text()
+        self.height = self.EditPro_height_textEdit.text()
 
         self.date = self.EditPro_Bday_dateEdit.date().day()
         self.month = self.EditPro_Bday_dateEdit.date().month()
         self.year = self.EditPro_Bday_dateEdit.date().year()
 
+        lis.append(self.Fname)
+        lis.append(self.Lname)
+        lis.append(str(self.date) + str(self.month) + str(self.year))
+        lis.append(self.pic)
+        
+        lis.append(self.Username)
+        lis.append(self.password)
+        
+        lis.append(self.weight)  ## not in use
+        lis.append(self.height)
 
-        self.user_list.append(self.Fname)
-        self.user_list.append(self.Lname)
-        self.user_list.append(self.Username)
-        self.user_list.append(self.password)
-        self.user_list.append(self.gender)
-        self.user_list.append(self.weigth)
-        self.user_list.append(self.heigth)
-        self.user_list.append(str(self.date))
-        self.user_list.append(str(self.month))
-        self.user_list.append(str(self.year))
-        self.user_list.append(self.pic)
+        print(lis)
 
-        print(self.user_list)
+        self.parent.current_user.edit_profile(self.parent.current_user.id,
+                                              lis[0], lis[1], lis[2], lis[3])
+        
+        self.parent.current_account.edit_account(self.parent.current_user.id,
+                                                 lis[4], lis[5])
+
 
         #self.show_textEdit.append(self.user_list)
         '''

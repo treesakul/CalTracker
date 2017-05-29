@@ -20,6 +20,11 @@ class UI_Manager(QMainWindow):
         QMainWindow.__init__(self, None) #init
         self.parent = parent
         self.setWindowTitle("CALTracker")
+
+        # user data
+        self.current_account = None
+        self.current_user = None
+        self.current_goal = None
         
         #QMacintoshstyle
 
@@ -32,8 +37,8 @@ class UI_Manager(QMainWindow):
         windowsvista
         Macintosh
         GTK
-        
         '''
+        
         QApplication.setStyle(QStyleFactory.create("Plastique"))
 
         #add background img
@@ -44,8 +49,6 @@ class UI_Manager(QMainWindow):
         self.setPalette(palette)
         '''
 
-        # user data
-        self.current_user = None
         #self.page_list = ["login_page",  "main_page"]
 
         # create stackedwidget + show first page
@@ -74,7 +77,9 @@ class UI_Manager(QMainWindow):
 
     def loginAs(self, user):
         with db_session:
+            self.current_account = Account[user]
             self.current_user = Profile[user]
+            self.current_goal = Goal[user]
 
     def getId(self):
         return self.current_user.id

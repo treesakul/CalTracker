@@ -9,6 +9,11 @@ class Account(db.Entity):
     id = PrimaryKey(int, auto=True)
     username = Required(str, unique= True)
     password = Required(str)
+
+    def edit_account(self,iden,user,pasw):
+        with db_session:
+            Account[iden].username = user
+            Account[iden].password = pasw
          
 db.generate_mapping(create_tables= True)
 
@@ -19,5 +24,7 @@ def add_account(u,p):
 @db_session
 def remove_account(a_id):
     Account[a_id].delete()
+
+
            
 

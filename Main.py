@@ -1,5 +1,6 @@
 from Account import *
 from Profile import *
+from Goal import *
 from LogIn import *
 from pony.orm import *
 db = Database()
@@ -14,10 +15,14 @@ class Main:
         self.a.check(x,y)       # self.a become the account that logged in
         theAcc = self.a.account.id
         with db_session:
-            find = Profile.select_by_sql(
-                "SELECT * FROM Profile WHERE id = $theAcc")
-        self.current = find[0]
+##            find = Profile.select_by_sql(
+##                "SELECT * FROM Profile WHERE id = $theAcc")
+            self.current = Profile[theAcc]
 
     def getAcc(self):
         print(self.current)
 
+    def setg(self, hei, start, cur, g, d):
+        iden = self.current.id
+        with db_session:
+            set_goal(iden, hei, start, cur, g, d)

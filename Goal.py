@@ -15,9 +15,6 @@ class Goal(db.Entity):
 db.generate_mapping(create_tables= True)
 
 @db_session
-def add_goal(iden, hei, start_wei, cur_wei, g_wei, d):
+def set_goal(iden, hei, start_wei, cur_wei, g_wei, d):  # iden come from Profile
     Goal(id = iden, height = hei, start_weight = start_wei,
          current_weight = cur_wei, goal_weight = g_wei, duration = d)
-
-def edit_goal():
-    pass

@@ -6,8 +6,7 @@ class Exercise(db.Entity):
     id =  PrimaryKey(int, auto= True)
     name = Required(str, unique= True)
     calorie = Required(int)
-    description = Optional(str)
-    pic = Optional(str)
+
 ##    def generate_mapping():
 ##        db.generate_mapping(create_tables= True)
 

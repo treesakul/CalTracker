@@ -6,7 +6,6 @@ class Food(db.Entity):
     id = PrimaryKey(int, auto=True)
     name = Required(str)
     calorie = Required(int)
-    description = Optional(str)
     pic = Optional(str)
 
 db.generate_mapping(create_tables=True)

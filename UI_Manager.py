@@ -10,6 +10,10 @@ from Exercise_Page_UI import *
 from Register_Page_UI import*
 from Goal_Page_UI import *
 
+from pony.orm import *
+db = Database()
+db.bind('oracle', 'TANAKORN/password@127.0.01')
+
 class UI_Manager(QMainWindow):
 
     def __init__(self, parent = None):
@@ -69,7 +73,12 @@ class UI_Manager(QMainWindow):
         self.central_widget.addWidget(self.register_page_widget)
 
     def loginAs(self, user):
-        self.current_user = Profile[user]
+        with db_session:
+            self.current_user = Profile[user]
+
+    def Register(self, lis):
+        pass
+            
 
     def getId(self):
         return self.current_user.id

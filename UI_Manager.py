@@ -75,13 +75,6 @@ class UI_Manager(QMainWindow):
     def loginAs(self, user):
         with db_session:
             self.current_user = Profile[user]
-<<<<<<< HEAD
-=======
-
-    def Register(self, lis):
-        pass
-            
->>>>>>> 90377c4400ce1a97a23b382856ae4b51c022bef6
 
     def getId(self):
         return self.current_user.id

@@ -10,8 +10,12 @@ class Register_Page_UI(QMainWindow):
         QMainWindow.__init__(self, None)
         self.parent = parent
         self.register_page_init()
+<<<<<<< HEAD
         self.system = LoginSystem()
                 
+=======
+
+>>>>>>> 90377c4400ce1a97a23b382856ae4b51c022bef6
     def register_page_init(self):
         loader = QUiLoader()
         form = loader.load("UIDesigner/Register_page_ui.ui", None)
@@ -86,6 +90,11 @@ class Register_Page_UI(QMainWindow):
         lis.append(self.Lname)
         lis.append(self.gender)
         lis.append(str(self.date)+str(self.month) + str(self.year))
+<<<<<<< HEAD
+=======
+
+        self.parent.Register(lis)
+>>>>>>> 90377c4400ce1a97a23b382856ae4b51c022bef6
 
         self.system.signup(lis[0],lis[1],lis[2],lis[3],lis[4],lis[5])
         self.parent.changePage("Login_Page_UI")

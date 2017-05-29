@@ -24,9 +24,9 @@ class LoginSystem:
         if(self.account != None):
             return self.account.id
         
-    def signup(self, user, pasw, fname, lname, bd):
+    def signup(self, user, pasw, fname, lname, gen, bd):
         with db_session:
             add_account(user, pasw)
             x = Account.select_by_sql(
                 "SELECT * FROM Account WHERE username =\'" + user +"\' AND password =\'" + pasw +"\'")
-            add_profile(x[0].id,fname,lname,bd)
+            add_profile(x[0].id,fname,lname, gen, bd)

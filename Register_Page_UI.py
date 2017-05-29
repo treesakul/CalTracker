@@ -1,16 +1,17 @@
 import sys
-
 from PySide.QtCore import *
 from PySide.QtGui import *
 from PySide.QtUiTools import *
+from LogIn import *
+from Account import *
 
 class Register_Page_UI(QMainWindow):
     def __init__(self, parent = None):
         QMainWindow.__init__(self, None)
         self.parent = parent
         self.register_page_init()
-        
-
+        self.system = LoginSystem()
+                
     def register_page_init(self):
         loader = QUiLoader()
         form = loader.load("UIDesigner/Register_page_ui.ui", None)
@@ -58,12 +59,9 @@ class Register_Page_UI(QMainWindow):
             print("male")
             self.gender = "male"
 
-
-
     def back_login(self):
         print("back")
         self.parent.changePage("Login_Page_UI")
-
 
     def save(self):
         ###### .text() use with lineedit  ###### .toPlainText() use with textedit
@@ -82,16 +80,12 @@ class Register_Page_UI(QMainWindow):
         self.month = self.Register_Bday_dateEdit.date().month()
         self.year = self.Register_Bday_dateEdit.date().year()
 
-        lis.append(self.Fname)
-        lis.append(self.Lname)
         lis.append(self.Username)
         lis.append(self.password)
+        lis.append(self.Fname)
+        lis.append(self.Lname)
         lis.append(self.gender)
-        lis.append(self.weigth)
-        lis.append(self.heigth)
-        lis.append(str(self.date))
-        lis.append(str(self.month))
-        lis.append(str(self.year))
+        lis.append(str(self.date)+str(self.month) + str(self.year))
 
-        return lis
-
+        self.system.signup(lis[0],lis[1],lis[2],lis[3],lis[4],lis[5])
+        self.parent.changePage("Login_Page_UI")

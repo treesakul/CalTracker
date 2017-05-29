@@ -49,8 +49,6 @@ class UI_Manager(QMainWindow):
         self.setPalette(palette)
         '''
 
-        #self.page_list = ["login_page",  "main_page"]
-
         # create stackedwidget + show first page
         self.central_widget = QStackedWidget()
         self.setCentralWidget(self.central_widget)
@@ -107,11 +105,11 @@ class UI_Manager(QMainWindow):
             self.centralWidget().setCurrentWidget(self.register_page_widget)
 
 def main():
-        app = QApplication(sys.argv)
+    app = QApplication(sys.argv)
 
-        w = UI_Manager()
-        w.show()
-        return app.exec_()
+    w = UI_Manager()
+    w.show()
+    return app.exec_()
 
 if __name__ == "__main__":
-        sys.exit(main())
+    sys.exit(main())

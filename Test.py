@@ -4,10 +4,8 @@ db = Database()
 db.bind('oracle', 'TANAKORN/password@127.0.01')
 
 class Test:
-    def __init__(self):
-        pass
-    def pic(self, f_id):
+    def pic(self):
+        a = "rice"
         with db_session:
-            selected = Food.select_by_sql(
-                "SELECT pic FROM Food WHERE id =\'" + str(f_id) + "\'")
-        return selected.pic
+            selected = Food.select_by_sql("SELECT * FROM Food WHERE name = $a")
+        return selected[0].name

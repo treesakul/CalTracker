@@ -10,7 +10,7 @@ class Goal(db.Entity):
     start_weight = Required(int)
     current_weight = Required(int)
     goal_weight = Required(int)
-    duration = Required(int)   # kg per week (can be negative)
+    duration = Required(float)   # kg per week (can be negative)
 
 db.generate_mapping(create_tables= True)
 

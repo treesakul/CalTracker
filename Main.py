@@ -21,11 +21,3 @@ class Main:
     def getAcc(self):
         print(self.current)
 
-##with db_session:
-##    n = Profile.select_by_sql("SELECT * FROM Profile")
-##print(n[0])
-
-##x = 14
-##with db_session:
-##    find = Profile.select_by_sql("SELECT * FROM Profile WHERE id = $x")
-##print(find)

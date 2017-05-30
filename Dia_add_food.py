@@ -1,131 +1,3 @@
-'''import sys
-
-from PySide.QtCore import *
-from PySide.QtGui import *
-from PySide.QtUiTools import *
-
-
-class Dia_add_food:
-    def dia_add_food_init(self,dia):
-        self.dia_add_food(dia)
-
-
-
-    def dia_add_food(self,dia):
-        # Dialog box
-        self.addDialog = QDialog(dia)
-        self.addDialog.setMinimumSize(700, 600)
-        layout = QVBoxLayout()
-
-        loader = QUiLoader()
-        dialogForm = loader.load("./UIDesigner/Food_add_dialog_ui.ui", None)
-        self.addDialog.setWindowTitle("Food Add Dialog")
-
-        layout.addWidget(dialogForm)
-
-        # show dialog box
-        self.addDialog.setLayout(layout)
-        self.addDialog.show()
-
-
-
-        ###############################################################
-
-
-        # init all attribute
-
-        # set QPushButton
-        self.foodDai_search_bt = dialogForm.findChild(QPushButton, "foodDai_search_bt")
-        self.foodDai_clear_bt = dialogForm.findChild(QPushButton, "foodDai_clear_bt")
-        self.foodDai_ok_bt = dialogForm.findChild(QPushButton, "foodDai_ok_bt")
-        #self.typeLabel = dialogForm.findChild(QPushButton, "typeLabel")
-
-
-        # set QLineEdit
-        self.foodDai_search_textEdit = dialogForm.findChild(QLineEdit, "foodDai_search_textEdit")
-
-
-        # set QScrollArea
-        self.foodDai_scrollArea = dialogForm.findChild(QScrollArea, "foodDai_scrollArea")
-        self.foodDai_user_scrollArea = dialogForm.findChild(QScrollArea, "foodDai_user_scrollArea")
-
-        self.set_all_scrollarea()
-        self.set_user_scrollarea()
-
-
-
-        #####################
-
-        # connect QPushButton
-        self.food_search_bt.clicked.connect(self.search)
-        self.food_clear_bt.clicked.connect(self.clear)
-
-        def set_all_scrollarea(self):
-            self.name = ["fant", "Krai", "Nine", "Pim"]
-            self.cal = ["100", "80", "50", "280"]
-            # self.name = ["fant", "Krai", "Nine", "Pim" , "a1", "a2", "a1", "a2", "a1", "a2", "a1", "a2", "a1", "a2", "a1", "a2", "a1", "a2"]
-            # self.cal = ["100" , "80" , "50" , "280", "a1", "a2", "a1", "a2", "a1", "a2", "a1", "a2", "a1", "a2", "a1", "a2", "a1", "a2"]
-            # self.bt = []
-            # button = []
-            # for i in self.name:
-            #  button[i] = QPushButton(i)
-            count = 0
-
-            self.widgetS = QWidget()  # create very large + long widget
-            layoutx = QVBoxLayout()  # layout for tht wiget
-            for i in self.name:
-                layouth = QHBoxLayout()
-                self.bt = QPushButton(i)
-                self.bt.clicked.connect(self.show_info)
-                layouth.addWidget(self.bt)
-
-                layouth.addWidget(QLabel(self.cal[count]))
-                # layouth.addWidget(self.bt[i])
-                layoutx.addLayout(layouth)
-                count = count + 1
-            layoutx.setAlignment(Qt.AlignTop)
-            self.widgetS.setLayout(layoutx)
-
-            self.food_scrollArea.setWidget(self.widgetS)
-
-            # self.namea = self.name
-            # self.namea.clicked.connect(self.show_info)
-
-
-
-        def search(self):
-            self.food_search = self.food_search_textEdit.text()
-            print("search: ", self.food_search)
-            for i in self.name:
-                if (self.food_search == i):
-                    self.widget = QWidget()  # create very large + long widget
-                    # box = QBoxLayout.TopToBottom
-                    layouth = QHBoxLayout()
-                    self.bt = QPushButton(self.food_search)
-                    self.bt.clicked.connect(self.show_info)
-                    layouth.addWidget(self.bt)
-                    layouth.addWidget(QLabel("222"))
-
-                    layouth.setAlignment(Qt.AlignTop)
-                    self.widget.setLayout(layouth)
-
-                    self.food_scrollArea.setWidget(self.widget)
-
-        def clear(self):
-            print("clear")
-            self.set_scrollarea()'''
-
-
-
-
-
-
-
-
-
-
-
-
 import sys
 
 from PySide.QtCore import *
@@ -133,81 +5,82 @@ from PySide.QtGui import *
 from PySide.QtUiTools import *
 
 
-class Dia_add_food:
-    def dia_add_food_init(self,dia):
-        self.dia_add_food(dia)
+
+class Dia_add_food(QMainWindow):
+    def __init__(self, parent = None):
+        QMainWindow.__init__(self, None)
+        self.parent = parent
+        self.dia_add_food_init()
 
 
-
-    def dia_add_food(self,dia):
-        # Dialog box
-        self.addDialog = QDialog(dia)
-        self.addDialog.setMinimumSize(660, 600)
-        layout = QVBoxLayout()
-
+    def dia_add_food_init(self):
         loader = QUiLoader()
-        dialogForm = loader.load("./UIDesigner/Food_add_dialog_ui_3.ui", None)
-        self.addDialog.setWindowTitle("Food Add Dialog")
+        form = loader.load("UIDesigner/Food_add_dialog_ui.ui", None)
+        self.setCentralWidget(form)
 
-        layout.addWidget(dialogForm)
-
-        # show dialog box
-        self.addDialog.setLayout(layout)
-        self.addDialog.show()
-
-
-
-        ###############################################################
-
-
-        # init all attribute
-
-        # set QPushButton
-        self.foodDai_delete_bt = dialogForm.findChild(QPushButton, "foodDai_clear_bt")
-        self.foodDai_ok_bt = dialogForm.findChild(QPushButton, "foodDai_ok_bt")
-        self.foodDai_add_bt = dialogForm.findChild(QPushButton, "foodDai_add_bt")
-
-
+        self.list_info = []
         # set QComboBox
-        self.foodDai_search_cb = dialogForm.findChild(QComboBox, "foodDai_search_cb")
+        self.foodDai_search_cb = form.findChild(QComboBox, "foodDai_search_cb")
 
-        # set QScrollArea
-        self.foodDai_scrollArea = dialogForm.findChild(QScrollArea, "foodDai_scrollArea")
+        #set QPushButton
+        self.foodDai_save_bt = form.findChild(QPushButton, "foodDai_save_bt")
+        self.foodDai_back_bt = form.findChild(QPushButton, "foodDai_back_bt")
+        self.foodDai_add_bt = form.findChild(QPushButton, "foodDai_add_bt")
+        self.foodDai_delete_bt = form.findChild(QPushButton, "foodDai_delete_bt")
 
-
-
-
-
-        #####################
-
-        # connect QPushButton
-        #self.foodDai_delete_bt.clicked.connect(self.delete)
-        self.foodDai_ok_bt.clicked.connect(self.ok)
-        self.foodDai_add_bt.clicked.connect(self.addd)
+        #set QScrollArea
+        self.foodDai_scrollArea = form.findChild(QScrollArea, "foodDai_scrollArea")
+        self.set_scrollarea()
 
 
+        #self.food_pic.setScaledContents(True)
 
-        # connect QComboBox
-        #self.foodDai_search_cb.currentIndexChanged.connect(self.show_info)
 
-        self.name =  ["fant", "Krai", "Nine", "Pim"]
+        ####################
+
+        #connect QPushButton
+        self.foodDai_save_bt.clicked.connect(self.save)
+        self.foodDai_back_bt.clicked.connect(self.back_main)
+        self.foodDai_add_bt.clicked.connect(self.add)
+        self.foodDai_delete_bt.clicked.connect(self.delete)
+
+
+
+
+        self.name = ["fant", "Krai", "Nine", "Pim"]
         self.cal = ["100", "80", "50", "280"]
         for i in self.name:
             self.foodDai_search_cb.addItem(i)
 
-    def ok(self):
+
+        print(self.list_info)
+
+
+    def back_main(self):
         print("im in")
-    def addd(self):
+        self.addDialog.close()
+        #sys.exit(self.exec_())
+
+
+    def add(self):
         print("add")
-        self.list_info = []
+        currentcb = self.foodDai_search_cb.currentText()
+        if(currentcb not in self.list_info):
+            self.list_info.append(currentcb)
+            self.set_scrollarea()
 
-        self.list_info.append(self.foodDai_search_cb.currentText())
-        self.set_scrollarea()
+    def delete(self):
+        print("delete")
+        currentcb = self.foodDai_search_cb.currentText()
+        if (currentcb in self.list_info):
+            self.list_info.remove(currentcb)
+            self.set_scrollarea()
 
+    def save(self):
+        print(self.list_info)
     def set_scrollarea(self):
         self.widgetS = QWidget()
         layoutx = QVBoxLayout()
-
         for i in self.list_info:
             layouth = QHBoxLayout()
             self.label = QLabel(i)
@@ -222,37 +95,6 @@ class Dia_add_food:
         self.foodDai_scrollArea.setWidget(self.widgetS)
 
 
-
-        def set_all_scrollarea(self):
-            self.name = ["fant", "Krai", "Nine", "Pim"]
-            self.cal = ["100", "80", "50", "280"]
-            # self.name = ["fant", "Krai", "Nine", "Pim" , "a1", "a2", "a1", "a2", "a1", "a2", "a1", "a2", "a1", "a2", "a1", "a2", "a1", "a2"]
-            # self.cal = ["100" , "80" , "50" , "280", "a1", "a2", "a1", "a2", "a1", "a2", "a1", "a2", "a1", "a2", "a1", "a2", "a1", "a2"]
-            # self.bt = []
-            # button = []
-            # for i in self.name:
-            #  button[i] = QPushButton(i)
-            count = 0
-
-            self.widgetS = QWidget()  # create very large + long widget
-            layoutx = QVBoxLayout()  # layout for tht wiget
-            for i in self.name:
-                layouth = QHBoxLayout()
-                self.bt = QPushButton(i)
-                self.bt.clicked.connect(self.show_info)
-                layouth.addWidget(self.bt)
-
-                layouth.addWidget(QLabel(self.cal[count]))
-                # layouth.addWidget(self.bt[i])
-                layoutx.addLayout(layouth)
-                count = count + 1
-            layoutx.setAlignment(Qt.AlignTop)
-            self.widgetS.setLayout(layoutx)
-
-            self.food_scrollArea.setWidget(self.widgetS)
-
-            # self.namea = self.name
-            # self.namea.clicked.connect(self.show_info)
-
-
+    def back_main(self):
+        self.parent.changePage("Main_Page")
 

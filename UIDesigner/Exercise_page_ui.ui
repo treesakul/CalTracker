@@ -59,7 +59,7 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>22</pointsize>
+     <pointsize>20</pointsize>
     </font>
    </property>
    <property name="text">
@@ -101,8 +101,8 @@
    <widget class="QLabel" name="exercise_name_lb">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>60</y>
+      <x>20</x>
+      <y>280</y>
       <width>241</width>
       <height>41</height>
      </rect>
@@ -114,21 +114,21 @@
    <widget class="QLabel" name="exercise_type_lb">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>130</y>
+      <x>20</x>
+      <y>330</y>
       <width>241</width>
       <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string>Type :</string>
+     <string>Calorie :</string>
     </property>
    </widget>
    <widget class="QLabel" name="exercise_howto_lb">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>190</y>
+      <x>20</x>
+      <y>390</y>
       <width>241</width>
       <height>41</height>
      </rect>
@@ -137,6 +137,51 @@
      <string>How to do:</string>
     </property>
    </widget>
+   <widget class="QLabel" name="exercise_back">
+    <property name="geometry">
+     <rect>
+      <x>-20</x>
+      <y>-90</y>
+      <width>1811</width>
+      <height>1441</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {background-color : #b3d9ff;}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="exercise_info_des_textEdit">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>440</y>
+      <width>261</width>
+      <height>111</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="exercise_pic">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>80</y>
+      <width>181</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>exercise_back</zorder>
+   <zorder>exercise_name_lb</zorder>
+   <zorder>exercise_type_lb</zorder>
+   <zorder>exercise_howto_lb</zorder>
+   <zorder>exercise_info_des_textEdit</zorder>
+   <zorder>exercise_pic</zorder>
   </widget>
   <widget class="QPushButton" name="exercise_add_bt">
    <property name="geometry">
@@ -149,7 +194,7 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>14</pointsize>
+     <pointsize>12</pointsize>
     </font>
    </property>
    <property name="text">
@@ -167,7 +212,7 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>14</pointsize>
+     <pointsize>12</pointsize>
     </font>
    </property>
    <property name="text">
@@ -200,6 +245,49 @@
     <string>clear</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>-820</x>
+     <y>-140</y>
+     <width>1571</width>
+     <height>1211</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {background-color : #b3d9ff;}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>-60</y>
+     <width>1421</width>
+     <height>961</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {background-color:#1f1f2e;}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>label_3</zorder>
+  <zorder>label_4</zorder>
+  <zorder>exercise_scrollArea</zorder>
+  <zorder>label</zorder>
+  <zorder>exercise_search_textEdit</zorder>
+  <zorder>exercise_search_bt</zorder>
+  <zorder>food_info_widget</zorder>
+  <zorder>exercise_add_bt</zorder>
+  <zorder>exercise_delete_bt</zorder>
+  <zorder>exercise_back_bt</zorder>
+  <zorder>exercise_clear_bt</zorder>
  </widget>
  <resources/>
  <connections/>

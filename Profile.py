@@ -1,6 +1,6 @@
+from pony.orm import *
 from Account import *
 from Goal import *
-from pony.orm import *
 db = Database()
 db.bind('oracle', 'TANAKORN/password@127.0.01')
 
@@ -11,17 +11,13 @@ class Profile(db.Entity):
     gender = Required(str)
     birthday = Required(str)
     pic = Optional(str)
+    
 
-    def edit_profile(self,iden,fname,lname,bd,pic):
+    def edit_profile(self,iden,fname,lname,pic=""):
         with db_session:
             Profile[iden].fname = fname
             Profile[iden].lname = lname
-##            Profile[iden].weight = wei
-##            Profile[iden].height = hei
-            Profile[iden].birthday = bd
             Profile[iden].pic = pic
-##            Account[iden].username = user
-##            Account[iden].password = pasw
     
 db.generate_mapping(create_tables= True)
 

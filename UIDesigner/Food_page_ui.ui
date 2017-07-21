@@ -59,7 +59,7 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>22</pointsize>
+     <pointsize>20</pointsize>
     </font>
    </property>
    <property name="text">
@@ -102,7 +102,7 @@
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>90</y>
+      <y>40</y>
       <width>241</width>
       <height>181</height>
      </rect>
@@ -526,14 +526,14 @@
      <bool>true</bool>
     </property>
     <property name="text">
-     <string>Photo</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="food_info_name">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>320</y>
+      <x>40</x>
+      <y>260</y>
       <width>241</width>
       <height>41</height>
      </rect>
@@ -545,8 +545,8 @@
    <widget class="QLabel" name="food_info_cal">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>380</y>
+      <x>40</x>
+      <y>300</y>
       <width>241</width>
       <height>41</height>
      </rect>
@@ -555,6 +555,54 @@
      <string>Cal :</string>
     </property>
    </widget>
+   <widget class="QTextEdit" name="food_info_des_textedit">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>350</y>
+      <width>271</width>
+      <height>191</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="food_info_des">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>340</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Descriptions :</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="food_back">
+    <property name="geometry">
+     <rect>
+      <x>-30</x>
+      <y>-20</y>
+      <width>1761</width>
+      <height>1451</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {background-color : #b3d9ff;}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>food_back</zorder>
+   <zorder>food_pic</zorder>
+   <zorder>food_info_name</zorder>
+   <zorder>food_info_cal</zorder>
+   <zorder>food_info_des_textedit</zorder>
+   <zorder>food_info_des</zorder>
   </widget>
   <widget class="QPushButton" name="food_add_bt">
    <property name="geometry">
@@ -567,7 +615,7 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>18</pointsize>
+     <pointsize>12</pointsize>
     </font>
    </property>
    <property name="text">
@@ -585,7 +633,7 @@
    </property>
    <property name="font">
     <font>
-     <pointsize>18</pointsize>
+     <pointsize>12</pointsize>
     </font>
    </property>
    <property name="text">
@@ -618,6 +666,49 @@
     <string>clear</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>-180</x>
+     <y>-120</y>
+     <width>891</width>
+     <height>1211</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {background-color : #b3d9ff;}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>-30</y>
+     <width>1421</width>
+     <height>961</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {background-color:#1f1f2e;}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>label_4</zorder>
+  <zorder>label_3</zorder>
+  <zorder>food_scrollArea</zorder>
+  <zorder>label1</zorder>
+  <zorder>food_search_textEdit</zorder>
+  <zorder>food_search_bt</zorder>
+  <zorder>food_info_widget</zorder>
+  <zorder>food_add_bt</zorder>
+  <zorder>food_delete_bt</zorder>
+  <zorder>food_back_bt</zorder>
+  <zorder>food_clear_bt</zorder>
  </widget>
  <resources/>
  <connections/>

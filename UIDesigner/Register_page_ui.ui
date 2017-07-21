@@ -28,9 +28,9 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>70</x>
      <y>30</y>
-     <width>521</width>
+     <width>551</width>
      <height>131</height>
     </rect>
    </property>
@@ -452,7 +452,7 @@
    <property name="font">
     <font>
      <family>Sitka Text</family>
-     <pointsize>28</pointsize>
+     <pointsize>24</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
@@ -821,7 +821,7 @@
     <rect>
      <x>730</x>
      <y>290</y>
-     <width>221</width>
+     <width>231</width>
      <height>61</height>
     </rect>
    </property>
@@ -915,7 +915,7 @@
     <rect>
      <x>720</x>
      <y>210</y>
-     <width>231</width>
+     <width>241</width>
      <height>61</height>
     </rect>
    </property>
@@ -1040,16 +1040,16 @@
   <widget class="QLabel" name="label_8">
    <property name="geometry">
     <rect>
-     <x>750</x>
+     <x>740</x>
      <y>100</y>
-     <width>411</width>
+     <width>421</width>
      <height>61</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>MS PGothic</family>
-     <pointsize>28</pointsize>
+     <pointsize>24</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
@@ -1082,7 +1082,7 @@
     <rect>
      <x>670</x>
      <y>-50</y>
-     <width>521</width>
+     <width>541</width>
      <height>941</height>
     </rect>
    </property>

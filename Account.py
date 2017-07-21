@@ -25,6 +25,3 @@ def add_account(u,p):
 def remove_account(a_id):
     Account[a_id].delete()
 
-
-           
-

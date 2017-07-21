@@ -1,6 +1,8 @@
 from Account import *
 from Profile import *
 from Goal import *
+from Profile import *
+from Account import *
 from pony.orm import *
 db = Database()
 db.bind('oracle', 'TANAKORN/password@127.0.01')
@@ -20,6 +22,13 @@ class LoginSystem:
                 else:
                     return False
 
+    def getAcc(self):
+        if(self.account != None):
+            return self.account.id
+    def getAccObj(self):
+        if(self.account != None):
+            return self.account
+
     def getId(self):
         if(self.account != None):
             return self.account.id
@@ -31,3 +40,4 @@ class LoginSystem:
                 "SELECT * FROM Account WHERE username =\'" + user +"\' AND password =\'" + pasw +"\'")
             add_profile(x[0].id,fname,lname, gen, bd)
             add_goal(x[0].id,hei,start,cur,goal,a)
+

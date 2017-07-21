@@ -16,16 +16,22 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>490</x>
-     <y>70</y>
-     <width>171</width>
+     <x>540</x>
+     <y>60</y>
+     <width>231</width>
      <height>121</height>
     </rect>
    </property>
    <property name="font">
     <font>
+     <family>Segoe UI Black</family>
      <pointsize>48</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {color:white;}</string>
    </property>
    <property name="text">
     <string>Goal </string>
@@ -36,7 +42,7 @@
     <rect>
      <x>200</x>
      <y>230</y>
-     <width>251</width>
+     <width>301</width>
      <height>61</height>
     </rect>
    </property>
@@ -44,6 +50,9 @@
     <font>
      <pointsize>20</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {color:white;}</string>
    </property>
    <property name="text">
     <string> Starting weight</string>
@@ -52,7 +61,7 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>550</x>
+     <x>680</x>
      <y>230</y>
      <width>55</width>
      <height>51</height>
@@ -63,36 +72,11 @@
      <pointsize>20</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {color:white;}</string>
+   </property>
    <property name="text">
     <string>Kg</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>670</x>
-     <y>230</y>
-     <width>55</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>24</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>On</string>
-   </property>
-  </widget>
-  <widget class="QDateEdit" name="Goal_dateEdit">
-   <property name="geometry">
-    <rect>
-     <x>760</x>
-     <y>250</y>
-     <width>110</width>
-     <height>31</height>
-    </rect>
    </property>
   </widget>
   <widget class="QLabel" name="label_5">
@@ -100,7 +84,7 @@
     <rect>
      <x>210</x>
      <y>320</y>
-     <width>251</width>
+     <width>281</width>
      <height>61</height>
     </rect>
    </property>
@@ -108,6 +92,9 @@
     <font>
      <pointsize>20</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {color:white;}</string>
    </property>
    <property name="text">
     <string>Current weight</string>
@@ -116,7 +103,7 @@
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>550</x>
+     <x>680</x>
      <y>320</y>
      <width>55</width>
      <height>51</height>
@@ -127,6 +114,9 @@
      <pointsize>20</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {color:white;}</string>
+   </property>
    <property name="text">
     <string>Kg</string>
    </property>
@@ -134,7 +124,7 @@
   <widget class="QComboBox" name="Goal_start_weight_cb">
    <property name="geometry">
     <rect>
-     <x>460</x>
+     <x>550</x>
      <y>250</y>
      <width>61</width>
      <height>21</height>
@@ -144,7 +134,7 @@
   <widget class="QComboBox" name="Goal_current_weight_cb">
    <property name="geometry">
     <rect>
-     <x>460</x>
+     <x>550</x>
      <y>340</y>
      <width>61</width>
      <height>21</height>
@@ -154,7 +144,7 @@
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>550</x>
+     <x>680</x>
      <y>400</y>
      <width>55</width>
      <height>51</height>
@@ -165,6 +155,9 @@
      <pointsize>20</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {color:white;}</string>
+   </property>
    <property name="text">
     <string>Cm</string>
    </property>
@@ -172,7 +165,7 @@
   <widget class="QComboBox" name="Goal_height_cb">
    <property name="geometry">
     <rect>
-     <x>460</x>
+     <x>550</x>
      <y>420</y>
      <width>61</width>
      <height>21</height>
@@ -193,6 +186,9 @@
      <pointsize>20</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {color:white;}</string>
+   </property>
    <property name="text">
     <string>Height</string>
    </property>
@@ -200,7 +196,7 @@
   <widget class="QLabel" name="label_9">
    <property name="geometry">
     <rect>
-     <x>550</x>
+     <x>680</x>
      <y>490</y>
      <width>55</width>
      <height>51</height>
@@ -211,6 +207,9 @@
      <pointsize>20</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {color:white;}</string>
+   </property>
    <property name="text">
     <string>Kg</string>
    </property>
@@ -218,7 +217,7 @@
   <widget class="QComboBox" name="Goal_goal_weight_cb">
    <property name="geometry">
     <rect>
-     <x>460</x>
+     <x>550</x>
      <y>510</y>
      <width>61</width>
      <height>21</height>
@@ -239,6 +238,9 @@
      <pointsize>20</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {color:white;}</string>
+   </property>
    <property name="text">
     <string>Goal weight</string>
    </property>
@@ -246,9 +248,9 @@
   <widget class="QLabel" name="label_12">
    <property name="geometry">
     <rect>
-     <x>550</x>
+     <x>680</x>
      <y>580</y>
-     <width>81</width>
+     <width>221</width>
      <height>51</height>
     </rect>
    </property>
@@ -257,14 +259,17 @@
      <pointsize>20</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {color:white;}</string>
+   </property>
    <property name="text">
-    <string>Days</string>
+    <string>kg per week</string>
    </property>
   </widget>
   <widget class="QComboBox" name="Goal_duration_cb">
    <property name="geometry">
     <rect>
-     <x>460</x>
+     <x>550</x>
      <y>600</y>
      <width>61</width>
      <height>21</height>
@@ -285,8 +290,11 @@
      <pointsize>20</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {color:white;}</string>
+   </property>
    <property name="text">
-    <string>Duration</string>
+    <string>Amount</string>
    </property>
   </widget>
   <widget class="QPushButton" name="Goal_save_bt">
@@ -325,6 +333,75 @@
     <string>Back</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_11">
+   <property name="geometry">
+    <rect>
+     <x>-180</x>
+     <y>700</y>
+     <width>1641</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {background-color : #b3d9ff;}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_14">
+   <property name="geometry">
+    <rect>
+     <x>-100</x>
+     <y>70</y>
+     <width>1641</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {background-color : #b3d9ff;}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_15">
+   <property name="geometry">
+    <rect>
+     <x>-70</x>
+     <y>-20</y>
+     <width>1421</width>
+     <height>921</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {background-color:#1f1f2e;}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>label_15</zorder>
+  <zorder>label_14</zorder>
+  <zorder>label_11</zorder>
+  <zorder>label</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_3</zorder>
+  <zorder>label_5</zorder>
+  <zorder>label_6</zorder>
+  <zorder>Goal_start_weight_cb</zorder>
+  <zorder>Goal_current_weight_cb</zorder>
+  <zorder>label_7</zorder>
+  <zorder>Goal_height_cb</zorder>
+  <zorder>label_8</zorder>
+  <zorder>label_9</zorder>
+  <zorder>Goal_goal_weight_cb</zorder>
+  <zorder>label_10</zorder>
+  <zorder>label_12</zorder>
+  <zorder>Goal_duration_cb</zorder>
+  <zorder>label_13</zorder>
+  <zorder>Goal_save_bt</zorder>
+  <zorder>Goal_back_bt</zorder>
  </widget>
  <resources/>
  <connections/>

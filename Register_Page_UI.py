@@ -23,9 +23,6 @@ class Register_Page_UI(QMainWindow):
         self.Register_Lname_textEdit = form.findChild(QLineEdit, "Register_Lname_textEdit")
         self.Register_userName_textEdit = form.findChild(QLineEdit, "Register_userName_textEdit")
         self.Register_passWord_textEdit = form.findChild(QLineEdit, "Register_passWord_textEdit")
-##        self.Register_weight_textEdit = form.findChild(QLineEdit, "Register_weight_textEdit")
-##        self.Register_height_textEdit = form.findChild(QLineEdit, "Register_height_textEdit")
-
 
         # set QComboBox
         self.Register_start_weight_cb = form.findChild(QComboBox, "Register_start_weight_cb")
@@ -35,10 +32,10 @@ class Register_Page_UI(QMainWindow):
         self.Register_amount_cb = form.findChild(QComboBox, "Register_amount_cb")
         self.set_range_cb()
 
-        
         #set QRadioButton
         self.Register_Gender_Female_radioBT = form.findChild(QRadioButton, "Register_Gender_Female_radioBT")
         self.Register_Gender_Male_radioBT = form.findChild(QRadioButton, "Register_Gender_Male_radioBT")
+        
         self.GenderGroup = QButtonGroup()
         self.GenderGroup.addButton(self.Register_Gender_Female_radioBT)
         self.GenderGroup.addButton(self.Register_Gender_Male_radioBT)
@@ -46,15 +43,10 @@ class Register_Page_UI(QMainWindow):
         #set QDateEdit
         self.Register_Bday_dateEdit = form.findChild(QDateEdit, "Register_Bday_dateEdit")
 
-        #set QTextEdit
-        #self.show_textEdit = form.findChild(QTextEdit, "show_textEdit")
-
         #set QPushButton
         self.Register_save_bt = form.findChild(QPushButton, "Register_save_bt")
         self.Register_back_bt = form.findChild(QPushButton, "Register_back_bt")
 
-
-        ##########################
         #connect QPushButton
         self.Register_back_bt.clicked.connect(self.back_login)
         self.Register_save_bt.clicked.connect(self.save)
@@ -81,16 +73,10 @@ class Register_Page_UI(QMainWindow):
         for i in range(30, 201):
             self.Register_goal_weight_cb.addItem(str(i))
 
-        #############self.Register_amount_cb
-##        count = 0.0
-##        while(count!=5.0):
-##            count = count+0.2
-##            self.Register_amount_cb.addItem(str(count))
-        
+        #############self.Register_amount_cb  
         for i in range(26):
             self.Register_amount_cb.addItem(str("%0.1f" % (i * 0.2)))
-            
-            
+
     
     def genderclick(self):
         if self.sender() == self.Register_Gender_Female_radioBT:
@@ -102,6 +88,22 @@ class Register_Page_UI(QMainWindow):
 
     def back_login(self):
         print("back")
+ 
+        self.Register_Fname_textEdit.setText("")
+        self.Register_Lname_textEdit.setText("")
+        self.Register_userName_textEdit.setText("")
+        self.Register_passWord_textEdit.setText("")
+
+        # set QComboBox
+        self.Register_start_weight_cb.setCurrentIndex(0)
+        self.Register_current_weight_cb.setCurrentIndex(0)
+        self.Register_height_cb.setCurrentIndex(0)
+        self.Register_goal_weight_cb.setCurrentIndex(0)
+        self.Register_amount_cb.setCurrentIndex(0)
+
+        #set QDateEdit
+        #self.Register_Bday_dateEdit.clear()
+        
         self.parent.changePage("Login_Page_UI")
 
     def save(self):
@@ -131,7 +133,7 @@ class Register_Page_UI(QMainWindow):
         lis.append(self.Fname)
         lis.append(self.Lname)
         lis.append(self.gender)
-        lis.append(str(self.date)+str(self.month) + str(self.year))
+        lis.append(str(self.date)+'/'+str(self.month) + '/'+str(self.year))
         lis.append(self.register_height)
         lis.append(self.register_start_weight)
         lis.append(self.register_current_weight)
@@ -140,6 +142,16 @@ class Register_Page_UI(QMainWindow):
 
         self.system.signup(lis[0],lis[1],lis[2],lis[3],lis[4],lis[5],
                            lis[6],lis[7],lis[8],lis[9],lis[10])
-        
-        
+
+        # set to default
+        self.Register_Fname_textEdit.setText("")
+        self.Register_Lname_textEdit.setText("")
+        self.Register_userName_textEdit.setText("")
+        self.Register_passWord_textEdit.setText("")
+        self.Register_start_weight_cb.setCurrentIndex(0)
+        self.Register_current_weight_cb.setCurrentIndex(0)
+        self.Register_height_cb.setCurrentIndex(0)
+        self.Register_goal_weight_cb.setCurrentIndex(0)
+        self.Register_amount_cb.setCurrentIndex(0)
+
         self.parent.changePage("Login_Page_UI")

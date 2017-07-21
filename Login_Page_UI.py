@@ -24,15 +24,24 @@ class Login_Page_UI(QMainWindow):
         # set QLineEdit
         self.username_entry = form.findChild(QLineEdit, "username_entry")
         self.password_entry = form.findChild(QLineEdit, "password_entry")
+        self.password_entry.setEchoMode(QLineEdit.Password)
 
         # set QLabel
         self.login_pic = form.findChild(QLabel, "login_pic")
-        self.login_pic.setPixmap("./fresh-healthy-apples.jpg")
+        self.login_pic.setPixmap("./gym.png")
+        self.login_pic.setScaledContents(True)
+        self.error_login = form.findChild(QLabel, "error_login")
+        self.error_login.hide()
 
         #############################
         # connect QPushbutton
         self.login_button.clicked.connect(self.login)
         self.register_button.clicked.connect(self.register)
+
+
+    def update(self):
+        self.password_entry.setText("")
+        self.username_entry.setText("")
 
     def login(self):
 ##        print(self.login_button )
@@ -46,7 +55,7 @@ class Login_Page_UI(QMainWindow):
             self.parent.loginAs(self.system.getId()) #####
             self.parent.changePage("Main_Page")   
         else:
-            print("login error")
+            self.error_login.show()
             
     def register(self):
         self.parent.changePage("Register_Page_UI")

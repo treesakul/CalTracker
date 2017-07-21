@@ -16,9 +16,9 @@
   <widget class="QPushButton" name="foodDai_delete_bt">
    <property name="geometry">
     <rect>
-     <x>940</x>
-     <y>400</y>
-     <width>131</width>
+     <x>1000</x>
+     <y>700</y>
+     <width>141</width>
      <height>61</height>
     </rect>
    </property>
@@ -39,44 +39,20 @@
   <widget class="QComboBox" name="foodDai_search_cb">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>110</y>
-     <width>611</width>
+     <x>110</x>
+     <y>100</y>
+     <width>541</width>
      <height>41</height>
     </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>210</y>
-     <width>431</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>MS Gothic</family>
-     <pointsize>16</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QLabel {color:white;}</string>
-   </property>
-   <property name="text">
-    <string>Your favorite food list :</string>
    </property>
   </widget>
   <widget class="QScrollArea" name="foodDai_scrollArea">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>270</y>
-     <width>611</width>
-     <height>501</height>
+     <x>110</x>
+     <y>230</y>
+     <width>751</width>
+     <height>541</height>
     </rect>
    </property>
    <property name="widgetResizable">
@@ -87,41 +63,18 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>609</width>
-      <height>499</height>
+      <width>749</width>
+      <height>539</height>
      </rect>
     </property>
    </widget>
   </widget>
-  <widget class="QPushButton" name="foodDai_save_bt">
-   <property name="geometry">
-    <rect>
-     <x>940</x>
-     <y>690</y>
-     <width>131</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>14</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton {background-color:#4d79ff; border-style: outset; border-width: 2px; border-radius: 20px; border-color: beige;color:white;}</string>
-   </property>
-   <property name="text">
-    <string>Save</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="foodDai_add_bt">
    <property name="geometry">
     <rect>
-     <x>940</x>
-     <y>280</y>
-     <width>131</width>
+     <x>1000</x>
+     <y>570</y>
+     <width>141</width>
      <height>61</height>
     </rect>
    </property>
@@ -142,15 +95,14 @@
   <widget class="QPushButton" name="foodDai_back_bt">
    <property name="geometry">
     <rect>
-     <x>940</x>
-     <y>100</y>
-     <width>121</width>
-     <height>51</height>
+     <x>1000</x>
+     <y>90</y>
+     <width>131</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Microsoft YaHei Light</family>
      <pointsize>14</pointsize>
      <weight>75</weight>
      <bold>true</bold>
@@ -163,11 +115,42 @@
     <string>back</string>
    </property>
   </widget>
+  <widget class="QComboBox" name="foodDai_quantity_cb">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>100</y>
+     <width>71</width>
+     <height>41</height>
+    </rect>
+   </property>
+  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>880</x>
-     <y>-40</y>
+     <x>770</x>
+     <y>100</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {color:white;}</string>
+   </property>
+   <property name="text">
+    <string>per 100 g.</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>940</x>
+     <y>-30</y>
      <width>251</width>
      <height>931</height>
     </rect>
@@ -179,28 +162,12 @@
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>-110</x>
-     <y>-40</y>
-     <width>1421</width>
-     <height>961</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QLabel {background-color:#1f1f2e;}</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>50</y>
-     <width>471</width>
+     <x>110</x>
+     <y>40</y>
+     <width>531</width>
      <height>41</height>
     </rect>
    </property>
@@ -219,16 +186,57 @@
     <string>Our recommended food for you :</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>170</y>
+     <width>431</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>MS Gothic</family>
+     <pointsize>16</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {color:white;}</string>
+   </property>
+   <property name="text">
+    <string>Your favorite food list :</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>-60</x>
+     <y>-30</y>
+     <width>1421</width>
+     <height>961</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {background-color:#1f1f2e;}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>label_5</zorder>
   <zorder>label_3</zorder>
-  <zorder>label</zorder>
   <zorder>foodDai_delete_bt</zorder>
   <zorder>foodDai_search_cb</zorder>
-  <zorder>label_2</zorder>
   <zorder>foodDai_scrollArea</zorder>
-  <zorder>foodDai_save_bt</zorder>
   <zorder>foodDai_add_bt</zorder>
   <zorder>foodDai_back_bt</zorder>
+  <zorder>foodDai_quantity_cb</zorder>
+  <zorder>label</zorder>
   <zorder>label_4</zorder>
+  <zorder>label_2</zorder>
  </widget>
  <resources/>
  <connections/>

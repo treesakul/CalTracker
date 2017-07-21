@@ -16,5 +16,5 @@ class LoginSystem:
                 print("error")
                 return False
 
-a = LoginSystem()
-a.check('treesakul','1234')
+#a = LoginSystem()
+#a.check('treesakul','1234')
